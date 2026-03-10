@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Research | Bree J. Lang</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #1a2744;
+      --gold: #c8972a;
+      --gold-light: #f0d48a;
+      --cream: #faf8f4;
+      --text: #2c2c2c;
+      --muted: #666;
+      --border: #ddd8ce;
+    }
+    body { font-family: 'Source Sans 3', sans-serif; background: var(--cream); color: var(--text); font-weight: 300; line-height: 1.7; }
+
+    nav {
+      background: var(--navy); padding: 0 2.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    }
+    .nav-name { font-family: 'Playfair Display', serif; color: var(--gold-light); font-size: 1.15rem; padding: 1.1rem 0; letter-spacing: 0.02em; }
+    .nav-links { display: flex; gap: 0; }
+    .nav-links a {
+      color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.88rem;
+      font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 1.35rem 1.2rem; display: block; transition: color 0.2s, background 0.2s;
+      border-bottom: 3px solid transparent;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold-light); border-bottom-color: var(--gold); background: rgba(255,255,255,0.04); }
+
+    .page-header {
+      background: var(--navy); color: white; padding: 3rem 2.5rem;
+      position: relative;
+    }
+    .page-header::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 4px; background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+    }
+    .page-header-inner { max-width: 860px; margin: 0 auto; }
+    .page-header h1 { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 600; }
+    .page-header .cv-link {
+      display: inline-block; margin-top: 1rem; padding: 0.55rem 1.2rem;
+      background: transparent; border: 1.5px solid var(--gold);
+      color: var(--gold-light); font-size: 0.88rem; font-weight: 600;
+      letter-spacing: 0.05em; text-decoration: none; border-radius: 2px;
+      transition: all 0.2s;
+    }
+    .page-header .cv-link:hover { background: var(--gold); color: var(--navy); }
+
+    main { max-width: 860px; margin: 0 auto; padding: 3rem 2.5rem 5rem; }
+
+    .section-label {
+      font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em;
+      color: var(--gold); font-weight: 600; margin-bottom: 1.5rem;
+      padding-bottom: 0.6rem; border-bottom: 1px solid var(--border);
+    }
+
+    .pub-section { margin-bottom: 3rem; }
+
+    .pub-list { list-style: none; padding: 0; }
+    .pub-list li {
+      padding: 1.1rem 0; border-bottom: 1px solid var(--border);
+      font-size: 0.97rem;
+    }
+    .pub-list li:last-child { border-bottom: none; }
+
+    .pub-list a { color: var(--navy); font-weight: 600; text-decoration: none; }
+    .pub-list a:hover { text-decoration: underline; color: var(--gold); }
+
+    .pub-meta { color: var(--muted); font-size: 0.88rem; margin-top: 0.2rem; }
+
+    .press-list { list-style: none; padding: 0; }
+    .press-list li { padding: 0.7rem 0; border-bottom: 1px solid var(--border); font-size: 0.95rem; }
+    .press-list li:last-child { border-bottom: none; }
+    .press-list a { color: var(--navy); text-decoration: none; }
+    .press-list a:hover { text-decoration: underline; color: var(--gold); }
+
+    .other-card {
+      background: white; border: 1px solid var(--border); border-left: 3px solid var(--gold);
+      padding: 1.2rem 1.5rem; border-radius: 2px; font-size: 0.95rem;
+    }
+    .other-card a { color: var(--navy); font-weight: 600; text-decoration: none; }
+    .other-card a:hover { text-decoration: underline; }
+
+    footer { background: var(--navy); color: rgba(255,255,255,0.5); text-align: center; padding: 1.8rem; font-size: 0.85rem; }
+    footer a { color: var(--gold-light); text-decoration: none; }
+
+    @media (max-width: 640px) { nav { padding: 0 1rem; } .nav-name { display: none; } main { padding: 2rem 1.2rem 4rem; } }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <span class="nav-name">Bree J. Lang</span>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="research.html" class="active">Research</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="page-header-inner">
+      <h1>Research</h1>
+      <a href="https://drive.google.com/open?id=0B3V4za6C0wqXVHRhMEhReVAybVU" class="cv-link" target="_blank">↓ Download CV</a>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="pub-section">
+      <p class="section-label">Publications</p>
+      <ul class="pub-list">
+        <li>
+          <a href="https://drive.google.com/file/d/1wDe7vLW9tBIW24C5lH-LspV-U_eHozm8/view?usp=sharing" target="_blank">The Federal Tax Policy Uncertainty Risk Premium: Evidence from Tax Credit Prices</a>
+          <div class="pub-meta">with Pratish Patel &middot; <em>International Tax and Public Finance</em>, 2023: 30(3), 635–677</div>
+        </li>
+        <li>
+          <a href="https://drive.google.com/file/d/1AjxmdCcGfW4V7tjZeCCkMQXRF5Hw4qE7/view?usp=sharing" target="_blank">Car Accidents, Smartphone Adoption and 3G Coverage</a>
+          <div class="pub-meta">with Matthew Lang and Jonathan Hersh &middot; <em>Journal of Economic Behavior & Organization</em>, 2022: 196, 278–293</div>
+        </li>
+        <li>
+          <a href="https://drive.google.com/open?id=1GyUMhB5rVLKJ13xrH4uu9JTJ77kXXiHF" target="_blank">Pandemics, Protests and Firearms</a>
+          <div class="pub-meta">with Matthew Lang &middot; <em>American Journal of Health Economics</em>, 2021: 7(2), 131–163</div>
+        </li>
+        <li>
+          <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3132493" target="_blank">Overview and Proposed Reforms of the Low-Income Housing Tax Credit Program</a>
+          <div class="pub-meta">with Michael D. Eriksen &middot; <em>Regional Science and Urban Economics</em>, 2020: 80</div>
+        </li>
+        <li>
+          <a href="https://ideas.repec.org/a/ntj/journl/v68y2015i3p545-572.html" target="_blank">The Parcel Tax as a Local Revenue Source for California Public Schools</a>
+          <div class="pub-meta">with Jon Sonstelie &middot; <em>National Tax Journal</em>, 2015: 68(3), 545–571</div>
+        </li>
+        <li>
+          <a href="https://www.sciencedirect.com/science/article/pii/S016604621500023X" target="_blank">Input Distortions in the Low-Income Housing Tax Credit: Evidence from Building Size</a>
+          <div class="pub-meta"><em>Regional Science and Urban Economics</em>, 2015: 52, 119–128</div>
+        </li>
+        <li>
+          <a href="http://link.springer.com/article/10.1007/s11146-013-9432-1" target="_blank">The Effect of Down Payment Assistance on Mortgage Choice</a>
+          <div class="pub-meta">with Ellen Hurst &middot; <em>Journal of Real Estate Finance and Economics</em>, 2014: 49(3), 329–351</div>
+        </li>
+        <li>
+          <a href="https://www.sciencedirect.com/science/article/pii/S105113771200023X" target="_blank">Location Incentives in the Low-Income Housing Tax Credit: Are Qualified Census Tracts Necessary?</a>
+          <div class="pub-meta"><em>Journal of Housing Economics</em>, 2012: 21(2), 142–150</div>
+        </li>
+        <li>
+          <a href="https://ideas.repec.org/a/ebl/ecbull/eb-11-00083.html" target="_blank">Does Offering More Advanced Placement Courses Increase Enrollment?</a>
+          <div class="pub-meta"><em>Economics Bulletin</em>, 2011: 31(1), 893–904</div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="pub-section">
+      <p class="section-label">Working Papers</p>
+      <ul class="pub-list">
+        <li>
+          <a href="https://drive.google.com/file/d/1Nnzz1dHWWO4B_Qu4_Vv7bUcvUwtN5DqR/view?usp=sharing" target="_blank">Incentives and Non-Response Bias in Student Evaluations of Teaching</a>
+          <div class="pub-meta">with Matthew Lang</div>
+        </li>
+        <li>
+          <a href="https://drive.google.com/file/d/1d2N0BHapwZRJSpCK033-XVJR2rMXqlA9/view?usp=sharing" target="_blank">The Hidden Subsidies of the Low Income-Housing Tax Credit</a>
+          <div class="pub-meta">with Ed Olsen &middot; <em>Revisions Requested</em></div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="pub-section">
+      <p class="section-label">Other Contributions</p>
+      <div class="other-card">
+        Lincoln Institute of Land Policy. <a href="http://datatoolkits.lincolninst.edu/subcenters/significant-features-property-tax/TaxDigest.aspx" target="_blank">State-by-State Property Tax at a Glance</a>. Contributor for Ohio State Property Tax Narrative.
+      </div>
+    </div>
+
+    <div class="pub-section">
+      <p class="section-label">Mentions in Popular Press</p>
+      <ul class="press-list">
+        <li><a href="https://poll-hub.simplecast.com/episodes/challenges-faced-by-transgender-kids-1WAw_bH7" target="_blank">Poll Hub Marist Poll, Episode 306</a> — Second Segment on Housing Affordability, August 2023</li>
+        <li><a href="https://www.rollingstone.com/politics/politics-news/gun-profits-surge-violence-1359155/" target="_blank">Shootings Have Surged — and Gun Companies Have Made Billions</a> — Rolling Stone, May 2022</li>
+        <li><a href="https://spp.ucr.edu/addressing-housing-crisis" target="_blank">Addressing the Housing Crisis</a> — Policy Chats Podcast, UCR School of Public Policy, October 2021</li>
+        <li><a href="https://www.latimes.com/politics/story/2020-09-27/trump-biden-election-violence-divided-states-of-america" target="_blank">'It's going to be like war.' Voters eye 2020 election outcome with fear and loathing</a> — Los Angeles Times, September 2020</li>
+        <li><a href="https://podcasts.apple.com/us/podcast/the-backchannel/id1452377534" target="_blank">Will the Surge in Panic Gun Buying Have a Long-Term Effect?</a> — The Backchannel, July 2020</li>
+        <li><a href="https://edsource.org/2019/to-pass-parcel-tax-los-angeles-unified-will-need-to-break-with-history/613211" target="_blank">To pass parcel tax, Los Angeles Unified will need to break with history</a> — EdSource, June 2019</li>
+      </ul>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Department of Economics &middot; University of California, Santa Barbara &middot; <a href="contact.html">Contact</a></p>
+  </footer>
+
+</body>
+</html>

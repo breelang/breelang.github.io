@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Teaching | Bree J. Lang</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #1a2744; --gold: #c8972a; --gold-light: #f0d48a;
+      --cream: #faf8f4; --text: #2c2c2c; --muted: #666; --border: #ddd8ce;
+    }
+    body { font-family: 'Source Sans 3', sans-serif; background: var(--cream); color: var(--text); font-weight: 300; line-height: 1.7; }
+
+    nav {
+      background: var(--navy); padding: 0 2.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    }
+    .nav-name { font-family: 'Playfair Display', serif; color: var(--gold-light); font-size: 1.15rem; padding: 1.1rem 0; letter-spacing: 0.02em; }
+    .nav-links { display: flex; gap: 0; }
+    .nav-links a {
+      color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.88rem;
+      font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 1.35rem 1.2rem; display: block; transition: color 0.2s, background 0.2s;
+      border-bottom: 3px solid transparent;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold-light); border-bottom-color: var(--gold); background: rgba(255,255,255,0.04); }
+
+    .page-header {
+      background: var(--navy); color: white; padding: 3rem 2.5rem; position: relative;
+    }
+    .page-header::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 4px; background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+    }
+    .page-header-inner { max-width: 860px; margin: 0 auto; }
+    .page-header h1 { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 600; }
+
+    main { max-width: 860px; margin: 0 auto; padding: 3rem 2.5rem 5rem; }
+
+    .section-label {
+      font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em;
+      color: var(--gold); font-weight: 600; margin-bottom: 1.5rem;
+      padding-bottom: 0.6rem; border-bottom: 1px solid var(--border);
+    }
+
+    .section { margin-bottom: 3rem; }
+
+    /* Virtual Econ Feature Card */
+    .feature-card {
+      background: white; border: 1px solid var(--border); border-top: 4px solid var(--navy);
+      padding: 2rem; border-radius: 2px; margin-bottom: 3rem;
+    }
+    .feature-card h2 {
+      font-family: 'Playfair Display', serif; font-size: 1.4rem;
+      color: var(--navy); margin-bottom: 0.75rem;
+    }
+    .feature-card p { font-size: 0.97rem; color: var(--text); margin-bottom: 1rem; }
+    .feature-card a.btn {
+      display: inline-block; padding: 0.6rem 1.3rem;
+      background: var(--navy); color: white; text-decoration: none;
+      font-size: 0.88rem; font-weight: 600; letter-spacing: 0.04em;
+      border-radius: 2px; transition: background 0.2s;
+    }
+    .feature-card a.btn:hover { background: #243660; }
+
+    /* Syllabi list */
+    .course-list { list-style: none; padding: 0; }
+    .course-list li {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 0.85rem 0; border-bottom: 1px solid var(--border); gap: 1.5rem;
+      font-size: 0.95rem;
+    }
+    .course-list li:last-child { border-bottom: none; }
+    .course-list a { color: var(--navy); font-weight: 600; text-decoration: none; flex: 1; }
+    .course-list a:hover { text-decoration: underline; color: var(--gold); }
+    .course-meta { color: var(--muted); font-size: 0.85rem; white-space: nowrap; }
+
+    .institution-group { margin-bottom: 2rem; }
+    .institution-label {
+      font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--muted); margin-bottom: 0.5rem; font-weight: 600;
+    }
+
+    footer { background: var(--navy); color: rgba(255,255,255,0.5); text-align: center; padding: 1.8rem; font-size: 0.85rem; }
+    footer a { color: var(--gold-light); text-decoration: none; }
+
+    @media (max-width: 640px) {
+      nav { padding: 0 1rem; } .nav-name { display: none; }
+      main { padding: 2rem 1.2rem 4rem; }
+      .course-list li { flex-direction: column; gap: 0.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <span class="nav-name">Bree J. Lang</span>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="teaching.html" class="active">Teaching</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="page-header-inner">
+      <h1>Teaching</h1>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="feature-card">
+      <h2>Virtual Econ Simulations</h2>
+      <p>With Matthew Lang, I co-developed Virtual Econ — a website providing Python-based interactive simulations for principles of microeconomics and macroeconomics students. We are actively adding new games and welcome comments and suggestions.</p>
+      <p>If you are interested in a leaderboard for your class, or would like examples of assignments that pair with each simulation, please <a href="contact.html" style="color: var(--navy); font-weight:600;">contact me</a>. The service is currently free, with the intention of increasing traffic; we hope to eventually fund server costs through private sponsors.</p>
+      <a href="https://virtualecon.ucr.edu/" class="btn" target="_blank">Visit Virtual Econ →</a>
+    </div>
+
+    <div class="section">
+      <p class="section-label">Syllabi from Recent Courses</p>
+
+      <div class="institution-group">
+        <p class="institution-label">UC Santa Barbara</p>
+        <ul class="course-list">
+          <!-- Add UCSB courses here as they become available -->
+          <li>
+            <span style="color: var(--muted); font-style: italic;">Syllabi coming soon</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="institution-group">
+        <p class="institution-label">UC Riverside</p>
+        <ul class="course-list">
+          <li>
+            <a href="https://drive.google.com/open?id=1EuAfsMZFK3j6unhPJphLWDpmEeTqAmYY" target="_blank">Econ 003: Principles of Microeconomics</a>
+            <span class="course-meta">Spring 2024</span>
+          </li>
+          <li>
+            <a href="https://drive.google.com/open?id=1SIidLNz9lm9IpcKaD_zmPYcpBVTO427r" target="_blank">Econ 178: International Trade</a>
+            <span class="course-meta">Fall 2023</span>
+          </li>
+          <li>
+            <a href="https://drive.google.com/open?id=1O7KbSpZhX0d3nWS4vnbGN2n6Sx_Z7Wvr" target="_blank">Econ 146: Urban and Regional Economics</a>
+            <span class="course-meta">Spring 2023</span>
+          </li>
+          <li>
+            <a href="https://drive.google.com/open?id=199bTOm36_AEV6Q9J3dIVbBdbXOXlRKI-" target="_blank">Econ 104B: Intermediate Microeconomic Theory II</a>
+            <span class="course-meta">Spring 2024</span>
+          </li>
+          <li>
+            <a href="https://drive.google.com/open?id=1eTlAW6Xp3oS4d5VNzoY5VAjP1w5jpP8Q" target="_blank">Econ 104A: Intermediate Microeconomic Theory I</a>
+            <span class="course-meta">Spring 2022</span>
+          </li>
+          <li>
+            <a href="https://drive.google.com/open?id=1BPo4I-j2n42XEWw54MYabOBGfRVMx5XB" target="_blank">Econ 102: Intermediate Microeconomics (for Business Students)</a>
+            <span class="course-meta">Winter 2017</span>
+          </li>
+          <li>
+            <a href="https://drive.google.com/open?id=1_1JSM7covx7drow-xMBT1F_HSGbITXev" target="_blank">Econ 182: Trade, Development and Globalization</a>
+            <span class="course-meta">Winter 2017</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="institution-group">
+        <p class="institution-label">Xavier University</p>
+        <ul class="course-list">
+          <li>
+            <a href="https://drive.google.com/open?id=1i67V_iwW1v_FN5tqtVG_sR2eh3sRAiab" target="_blank">Econ 390: Sports Finance and Economics</a>
+            <span class="course-meta">Fall 2015</span>
+          </li>
+          <li>
+            <a href="https://drive.google.com/open?id=1i67V_iwW1v_FN5tqtVG_sR2eh3sRAiab" target="_blank">Econ 600/550: Managerial Economics (MBA)</a>
+            <span class="course-meta">Spring 2015</span>
+          </li>
+          <li>
+            <a href="https://drive.google.com/open?id=1xVvokjoqli2UAreLoSkRFzzoKXS9k6G8" target="_blank">Econ 390: Economics of Poverty</a>
+            <span class="course-meta">Fall 2013</span>
+          </li>
+          <li>
+            <a href="https://drive.google.com/open?id=16OJjVddotDa-HrkbF92KuzOrPNcQDDMJ" target="_blank">Econ 501: Macroeconomic Analysis (MBA)</a>
+            <span class="course-meta">Fall 2012</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Department of Economics &middot; University of California, Santa Barbara &middot; <a href="contact.html">Contact</a></p>
+  </footer>
+
+</body>
+</html>
