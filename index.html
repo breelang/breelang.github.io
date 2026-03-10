@@ -1,12 +1,296 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Test Website</title>
-  </head>
-  <body>
-    <h1>Test Website</h1>
-    <p>I am working on making a website in GitHub. In the meantime, you can find my current website here: 
-<a href="https://sites.google.com/site/breejoneslang/">https://sites.google.com/site/breejoneslang/</a> </p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bree J. Lang | UC Santa Barbara</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1a2744;
+      --gold: #c8972a;
+      --gold-light: #f0d48a;
+      --cream: #faf8f4;
+      --text: #2c2c2c;
+      --muted: #666;
+      --border: #ddd8ce;
+    }
+
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    nav {
+      background: var(--navy);
+      padding: 0 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    }
+    .nav-name {
+      font-family: 'Playfair Display', serif;
+      color: var(--gold-light);
+      font-size: 1.15rem;
+      padding: 1.1rem 0;
+      letter-spacing: 0.02em;
+    }
+    .nav-links { display: flex; gap: 0; }
+    .nav-links a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 1.35rem 1.2rem;
+      display: block;
+      transition: color 0.2s, background 0.2s;
+      border-bottom: 3px solid transparent;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--gold-light);
+      border-bottom-color: var(--gold);
+      background: rgba(255,255,255,0.04);
+    }
+
+    /* HERO */
+    .hero {
+      background: var(--navy);
+      color: white;
+      padding: 4.5rem 2.5rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+    }
+    .hero-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: center;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 600;
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+    .hero .title {
+      color: var(--gold-light);
+      font-size: 1.05rem;
+      font-weight: 400;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.2rem;
+    }
+    .hero .institution {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.95rem;
+    }
+    .hero-badge {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(200,151,42,0.35);
+      border-radius: 4px;
+      padding: 1.2rem 1.5rem;
+      text-align: center;
+      min-width: 140px;
+    }
+    .hero-badge .dept {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold-light);
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    .hero-badge .dept-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: white;
+    }
+
+    /* MAIN CONTENT */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 3.5rem 2.5rem 5rem;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .bio p {
+      font-size: 1.05rem;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+    .bio p:last-child { margin-bottom: 0; }
+
+    .sidebar-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--gold);
+      padding: 1.5rem;
+      border-radius: 2px;
+    }
+    .sidebar-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+    .sidebar-card ul {
+      list-style: none;
+      padding: 0;
+    }
+    .sidebar-card ul li {
+      font-size: 0.9rem;
+      color: var(--muted);
+      padding: 0.3rem 0;
+      border-bottom: 1px solid #f0ece6;
+    }
+    .sidebar-card ul li:last-child { border-bottom: none; }
+
+    .links-section {
+      margin-top: 2.5rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.4rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background: var(--navy);
+      color: white;
+    }
+    .btn-primary:hover { background: #243660; }
+    .btn-secondary {
+      background: transparent;
+      color: var(--navy);
+      border: 1.5px solid var(--navy);
+    }
+    .btn-secondary:hover { background: var(--navy); color: white; }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 1.8rem;
+      font-size: 0.85rem;
+    }
+    footer a { color: var(--gold-light); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 640px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-badge { display: none; }
+      .about-grid { grid-template-columns: 1fr; }
+      nav { padding: 0 1rem; }
+      .nav-name { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <span class="nav-name">Bree J. Lang</span>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="research.html">Research</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div>
+        <h1>Bree J. Lang</h1>
+        <p class="title">Professor of Teaching</p>
+        <p class="institution">University of California, Santa Barbara</p>
+      </div>
+      <div class="hero-badge">
+        <span class="dept">Department of</span>
+        <span class="dept-name">Economics</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="about-grid">
+      <div class="bio">
+        <p class="section-label">About</p>
+        <p>I am a Professor of Teaching in the Economics Department at the University of California, Santa Barbara. My research interests include urban economics, subsidized housing, public finance, and taxation.</p>
+        <p>In addition to my research, I develop interactive simulations and games for economics courses. With Matthew Lang, I co-created <a href="https://virtualecon.ucr.edu/" style="color: var(--navy); font-weight:600;">Virtual Econ</a>, a website providing Python-based simulations for principles of microeconomics and macroeconomics students.</p>
+        <p>In my spare time, I enjoy bird photography. You can find my work on <a href="https://www.instagram.com/bjl_13/" style="color: var(--navy); font-weight:600;">Instagram</a>.</p>
+
+        <div class="links-section">
+          <a href="https://drive.google.com/open?id=0B3V4za6C0wqXVHRhMEhReVAybVU" class="btn btn-primary" target="_blank">Curriculum Vitae</a>
+          <a href="research.html" class="btn btn-secondary">Research</a>
+          <a href="teaching.html" class="btn btn-secondary">Teaching</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="sidebar-card">
+          <h3>Research Interests</h3>
+          <ul>
+            <li>Urban Economics</li>
+            <li>Subsidized Housing</li>
+            <li>Public Finance</li>
+            <li>Taxation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Department of Economics &middot; University of California, Santa Barbara &middot; <a href="contact.html">Contact</a></p>
+  </footer>
+
+</body>
 </html>
